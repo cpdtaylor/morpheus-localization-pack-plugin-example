@@ -1,10 +1,41 @@
 # Example Morpheus Language Pack Plugin
 An example Morpheus plugin for providing new localized messages that can be used within the UI and Catalog Forms
 
-This plugin will provide a new message in English, German and Klingon
-
 ![](demo.gif)
 
+This plugin will provide a new message in English, German and Klingon. To ensure Klingon is selectable in the Morpheus User/System locale settings, a Klingon Custom Locale is provided in the ExampleLocalizationProvider
+
+The plugin provides the message code "plugin.locale.example.good.morning" saying "Good Morning!" in English, and translated in German and Klingon 
+
+This message code can be used in a Form in Morpheus. Below is the example JSON payload to create a form that uses the message code.
+
+```json
+POST /api/library/option-type-forms
+{
+  "optionTypeForm": {
+    "name": "Localization Example",
+    "code": "localeExample",
+    "description": "An example form with an option type that uses a plugin provided localized label",
+    "options": [
+      {
+        "type": "text",
+        "required": false,
+        "exportMeta": false,
+        "editable": false,
+        "displayValueOnDetails": false,
+        "isLocked": false,
+        "isHidden": false,
+        "excludeFromSearch": false,
+        "fieldName": "localeExampleInput",
+        "fieldLabel": "overwritten",
+        "fieldCode": "plugin.locale.example.good.morning"
+      }
+    ]
+  }
+}
+```
+
+When the Form is loaded in Morpheus, the Label will auto-translate into the users chosen locale.
 
 ## EULA
 I have read and, by accessing or using any of the scripts set forth herein, agree to the Morpheus Scripts and Plugins License Agreement, and I also understand that ALL SCRIPTS ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH ANY AND ALL SCRIPTS OR THE USE OR OTHER DEALINGS IN ANY SCRIPTS. This Agreement takes effect when you use or access any of the Scripts.
