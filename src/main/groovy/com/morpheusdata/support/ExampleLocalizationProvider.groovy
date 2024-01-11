@@ -2,9 +2,7 @@ package com.morpheusdata.support
 
 import com.morpheusdata.core.MorpheusContext
 import com.morpheusdata.core.Plugin
-import com.morpheusdata.core.providers.LocalizationProvider
-import com.morpheusdata.model.Account
-import com.morpheusdata.model.Instance
+import com.morpheusdata.core.LocalizationProvider
 import com.morpheusdata.model.User
 import com.morpheusdata.model.CustomLocale
 
@@ -52,7 +50,7 @@ class ExampleLocalizationProvider implements LocalizationProvider {
 	 */
 	@Override
 	String getCode() {
-		return "exampleMessageProviderPlugin-instanceTab"
+		return "exampleMessageProviderPluginLocalizationProvider"
 	}
 
 	/**
