@@ -1,4 +1,4 @@
-# Example Morpheus Langugage Pack Plugin
+# Example Morpheus Language Pack Plugin
 An example Morpheus plugin for providing new localized messages that can be used within the UI and Catalog Forms
 
 This plugin will provide a new message in English, German and Klingon
